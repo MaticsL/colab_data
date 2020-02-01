@@ -33,12 +33,10 @@ def gauss_noise(image):
     return image
 
 image_list = [
-    'cw_2_狗_patch_raw.png',
-    'cw_4_无_patch_raw.png'
+    '2.jpg'
 ]
 image_list2 = [
-    'cw_2_dog_patch_raw.png',
-    'cw_4_none_patch_raw.png'
+    '2.jpg'
 ]
 
 for i in range(len(image_list)):
@@ -51,6 +49,6 @@ for i in range(len(image_list)):
     img_r.save(f + '.resize.png')
     img_e = img.filter(ImageFilter.EDGE_ENHANCE)
     img_e.save(f + '.edge_enhance.png')
-    img = cv.imread('F:\\temp\\'+ image_list2[i])
+    img = cv.imread('D:\\github\\colab_data\\1229def\\'+ image_list2[i])
     img_n = gauss_noise(img)
     cv.imwrite(f + '.noise.png', img_n)
